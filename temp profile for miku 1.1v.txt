@@ -1,0 +1,10 @@
+temp profile for miku 1.1v.txt
+
+            case '5': //正常版咪哭，也就是說不會很兇?
+                console.log('log5');
+                NormalMiku(msg);
+                break;
+            case '6'://標註功能區
+                console.log('log6');
+                TagReply(msg);
+                break;

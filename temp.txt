@@ -1,0 +1,35 @@
+ if(randomNumber <= 5){
+    msg.reply('恭喜你抽中了...');
+    setTimeout(msg.reply('50000水晶!!'), 3000);
+    console.log(5);
+
+    function weightRandom(curValue) {
+    var randomConfig = [{id:1, weight:5},{id:2, weight:10},{id:3,weight:15},
+                        {id:4, weight:20},{id:5, weight:30},{id:6, weight:919},
+                        {id:7, weight:1}];
+ 
+ //抽獎基本程式碼
+     case 'tendraw': //十抽
+        var items=["50000水晶", "15000水晶", "8000水晶", "3500水晶", "2000水晶", "安慰獎300水晶", "水晶盤子稱號"];
+        var itemsWeight=[5, 10, 15, 20, 30, 919, 1];
+        msg.reply("恭喜你抽中...");
+        function weightedRandom(items, itemsWeight)
+        {
+            var totalWeight=eval(itemsWeight.join("+"));
+            console.log(totalWeight);
+            // 1000
+            var randomArray=[];
+            for(var i=0; i<items.length; i++)
+            {
+                for(var j=0; j<itemsWeight[i]; j++)
+                {
+                    randomArray.push(i);
+                }
+            }
+            var randomNumber=Math.floor(Math.random()*totalWeight);
+            return items[randomArray[randomNumber]];
+        }
+        msg.channel.send(weightedRandom(items, itemsWeight));
+        for (var l=0; l<9; l++){
+        msg.channel.send(weightedRandom(items, itemsWeight))};
+        };
